@@ -1,8 +1,8 @@
 
-/* eslint-disable-next-line no-unused-vars */
+/* eslint-disable-next-line no-unused-vars, func-names */
 const oonsole = (function () {
     // ...transpile this script...
-    if (!(self && self.Proxy)) return console.log;
+    if (!(window && window.Proxy)) return console.log;
 
     // hyperscript-esque
     const h = (tag, attrs, content) => {
@@ -85,4 +85,4 @@ const oonsole = (function () {
         },
     };
     return new Proxy(console, handler);
-})();
+}());
